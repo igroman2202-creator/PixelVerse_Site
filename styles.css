@@ -116,7 +116,7 @@ h2 {
 
 .hero-section {
     background: linear-gradient(135deg, var(--blue), var(--dark-blue));
-    color: var(--white);
+    color: var(--white); /* Залишаємо білий для основного тексту секції */
     padding: 100px 10%;
     position: relative;
 }
@@ -145,6 +145,17 @@ h2 {
     position: relative;
     z-index: 2;
 }
+
+/* !!! ВИПРАВЛЕННЯ: ЗАДАЄМО ТЕМНИЙ КОЛІР ТЕКСТУ ДЛЯ КАРТОК НА ГОЛОВНІЙ СТОРІНЦІ !!! */
+.hero-section .card {
+    background-color: var(--white); /* Білий фон картки */
+    color: var(--text-color);       /* Встановлюємо темний колір для тексту (Це фікс) */
+}
+
+.hero-section .card h3 {
+    color: var(--purple); /* Зберігаємо фіолетовий колір заголовка */
+}
+
 
 /* Стилі для Секцій з Фіолетовим/Синім Фоном */
 .blue-bg {
