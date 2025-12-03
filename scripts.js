@@ -9,12 +9,44 @@ function debounce(func, delay) {
     };
 }
 
-// -------------------- Анімація З'явлення (Scroll Fade-In) --------------------
-function checkVisibility() {
-    const elements = document.querySelectorAll('.fade-in, .card.hover-effect');
+// -------------------- Активне Виділення Меню --------------------
+function highlightMenu() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.main-menu a');
+    let current = '';
 
-    elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
+    // Знаходимо активну секцію, яка знаходиться найближче до верхньої частини екрана
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        // Використовуємо зміщення на 150px для кращого досвіду
+        if (window.scrollY >= sectionTop - 150) { 
+            current = section.getAttribute('id');
+        }
+    });
+
+    // Знімаємо active клас з усіх посилань
+    navLinks.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href').includes(current)) {
+            // Додаємо active клас до поточного посилання
+            a.classList.add('active');
+        }
+    });
+}
+
+
+// -------------------- Ініціалізація --------------------
+document.addEventListener('DOMContentLoaded', () => {
+    // Об'єднуємо обробники скролу за допомогою debounce
+    const handleScroll = debounce(() => {
+        highlightMenu();
+    }, 10); 
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Перший запуск при завантаженні
+    highlightMenu(); 
+});
         // Перевіряємо, чи елемент знаходиться в межах 80% видимої області
         if (rect.top < window.innerHeight * 0.8) {
             el.classList.add('active');
