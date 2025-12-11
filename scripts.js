@@ -1,49 +1,323 @@
-// -------------------- Функція Debounce для оптимізації скролу --------------------
-function debounce(func, delay) {
-    let timeout;
-    return function() {
-        const context = this;
-        const args = arguments;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(context, args), delay);
-    };
+/* Основні Змінні Кольорів */
+:root {
+    --purple: #6A0DAD;   /* Яскравий Фіолетовий (Акцент, Креатив) */
+    --dark-purple: #4A087F; /* Темний Фіолетовий */
+    --blue: #007BFF;     /* Яскравий Синій (Технології) */
+    --dark-blue: #0056b3;  /* Темний Синій */
+    --white: #FFFFFF;    /* Білий (Текст, Картки) */
+    --text-color: #333;   /* Темний текст */
+    --bg-light: #f4f4f9;  /* Світло-сірий фон */
+    --shadow-main: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
-// -------------------- Активне Виділення Меню --------------------
-function highlightMenu() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.main-menu a');
-    let current = '';
+/* Глобальні Стилі та Скролбар */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    // Знаходимо активну секцію, яка знаходиться найближче до верхньої частини екрана
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        // Використовуємо зміщення на 150px для кращого досвіду
-        if (window.scrollY >= sectionTop - 150) { 
-            current = section.getAttribute('id');
-        }
-    });
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+    scroll-behavior: smooth;
+}
 
-    // Знімаємо active клас з усіх посилань
-    navLinks.forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href').includes(current)) {
-            // Додаємо active клас до поточного посилання
-            a.classList.add('active');
-        }
-    });
+/* Стилізація скролбару (Webkit-браузери) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--purple);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue);
+}
+
+/* -------------------- НАВІГАЦІЯ (МЕНЮ) -------------------- */
+.main-menu {
+    background: var(--dark-blue);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    color: var(--white);
+    font-weight: 800;
+    font-size: 1.5em;
+    margin-right: 30px;
+    letter-spacing: 1px;
+}
+
+.main-menu a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Динамічний ефект (Hover) для меню: синій -> фіолетовий */
+.main-menu a:hover {
+    background-color: var(--purple); 
+    transform: translateY(-2px);
+}
+
+/* Стиль для активного посилання меню (для JS) */
+.main-menu a.active {
+    background-color: var(--purple);
+    box-shadow: 0 0 10px rgba(106, 13, 173, 0.5);
+    font-weight: 600;
 }
 
 
-// -------------------- Ініціалізація --------------------
-document.addEventListener('DOMContentLoaded', () => {
-    // Об'єднуємо обробники скролу за допомогою debounce
-    const handleScroll = debounce(() => {
-        highlightMenu();
-    }, 10); 
+/* -------------------- СЕКЦІЇ -------------------- */
+.content-section {
+    padding: 80px 10%;
+    min-height: 500px;
+    text-align: center;
+}
 
-    window.addEventListener('scroll', handleScroll);
-    
-    // Перший запуск при завантаженні
-    highlightMenu(); 
-});
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--purple);
+    animation: text-shadow-pulse 3s infinite alternate; /* Додаткова динаміка */
+}
+
+/* Анімація тіні тексту */
+@keyframes text-shadow-pulse {
+    0% {
+        text-shadow: 0 0 5px rgba(106, 13, 173, 0.5); /* Фіолетовий */
+    }
+    100% {
+        text-shadow: 0 0 15px rgba(0, 123, 255, 0.7); /* Синій */
+    }
+}
+
+.section-description {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--blue), var(--dark-blue));
+    color: var(--white); /* Залишаємо білий для основного тексту секції */
+    padding: 100px 10%;
+    position: relative;
+}
+.hero-section h1 {
+    font-size: 3em;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+/* Ефект накладання (легка графіка на фоні) */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cg fill='%23ffffff' opacity='0.05'%3E%3Cpath d='M0 0h80v80H0z'/%3E%3Cpath d='M10 10h60v60H10z'/%3E%3C/g%3E%3C/svg%3E");
+    z-index: 1;
+    pointer-events: none;
+}
+.hero-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ВИПРАВЛЕННЯ КОЛЬОРУ ТЕКСТУ В КАРТКАХ НА ГОЛОВНІЙ СТОРІНЦІ */
+.hero-section .card {
+    background-color: var(--white); 
+    color: var(--text-color);       
+}
+
+.hero-section .card h3 {
+    color: var(--purple); 
+}
+
+
+/* Стилі для Секцій з Фіолетовим/Синім Фоном */
+.blue-bg {
+    background-color: var(--bg-light); 
+    color: var(--text-color);
+}
+.blue-bg h2 {
+    color: var(--blue);
+}
+
+.purple-bg {
+    background-color: var(--dark-purple);
+    color: var(--white);
+}
+.purple-bg h2 {
+    color: var(--white);
+}
+.purple-bg .section-description {
+    color: #ccc;
+}
+.purple-bg .card {
+    background-color: #5d2595;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+.purple-bg .card h3 {
+    color: var(--white);
+}
+.purple-bg .link-button {
+    background-color: var(--blue);
+    color: var(--white);
+}
+.purple-bg .link-button:hover {
+    background-color: var(--white);
+    color: var(--dark-purple);
+}
+
+
+/* -------------------- КАРТКИ (ДИНАМІКА) -------------------- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: var(--shadow-main);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.27), box-shadow 0.3s ease; /* Плавніший bounce ефект */
+}
+
+.card h3 {
+    font-size: 1.4em;
+    color: var(--purple);
+    margin-bottom: 15px;
+    /* Стиль для іконок у заголовках */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+.card p {
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
+
+/* Динамічний ефект (Hover) для карток - 3D Transform */
+.card.hover-effect:hover {
+    transform: perspective(1000px) rotateX(2deg) translateY(-10px); /* Легкий 3D ефект */
+    box-shadow: var(--shadow-hover);
+}
+
+.full-width-card {
+    grid-column: 1 / -1; /* Розтягування на всю ширину */
+}
+
+/* -------------------- ПОСИЛАННЯ (КНОПКИ) -------------------- */
+.link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--purple);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Динамічний ефект (Hover) для кнопок */
+.link-button:hover {
+    background-color: var(--blue);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* -------------------- СТИЛІ ДЛЯ ВІДЕО -------------------- */
+.video-container {
+    width: 70%; 
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 15px;
+    overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: #000;
+}
+.video-container video {
+    display: block;
+}
+
+/* -------------------- СТИЛІ ДЛЯ ІКОНОК (Логотипів Програм) -------------------- */
+.icon-tool {
+    font-size: 1.5em;
+    margin-right: 10px;
+    color: var(--blue); 
+}
+.purple-bg .icon-tool {
+    color: var(--white);
+}
+
+/* -------------------- ФУТЕР -------------------- */
+footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+.developer-info {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-top: 5px;
+    color: #cccccc;
+}
+
+/* Адаптивність (Mobile responsiveness) */
+@media (max-width: 768px) {
+    .main-menu {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .main-menu a {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+    .hero-section h1 {
+        font-size: 2em;
+    }
+    .content-section {
+        padding: 40px 5%;
+    }
+    .video-container {
+        width: 100%;
+    }
+}
