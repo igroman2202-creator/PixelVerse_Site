@@ -1,49 +1,49 @@
-// -------------------- Функція Debounce для оптимізації скролу --------------------
-function debounce(func, delay) {
+// Оптимізація викликів
+function debounce(func, delay = 15) {
     let timeout;
     return function() {
-        const context = this;
-        const args = arguments;
         clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(context, args), delay);
+        timeout = setTimeout(() => func.apply(this, arguments), delay);
     };
 }
 
-// -------------------- Активне Виділення Меню --------------------
+// Активне меню
 function highlightMenu() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.main-menu a');
-    let current = '';
+    let current = "";
 
-    // Знаходимо активну секцію, яка знаходиться найближче до верхньої частини екрана
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        // Використовуємо зміщення на 150px для кращого досвіду
-        if (window.scrollY >= sectionTop - 150) { 
+        if (window.scrollY >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
 
-    // Знімаємо active клас з усіх посилань
     navLinks.forEach(a => {
         a.classList.remove('active');
-        if (a.getAttribute('href').includes(current)) {
-            // Додаємо active клас до поточного посилання
+        if (a.getAttribute('href') === `#${current}`) {
             a.classList.add('active');
         }
     });
 }
 
+// Анімація появи карток (Intersection Observer)
+const revealOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
 
-// -------------------- Ініціалізація --------------------
 document.addEventListener('DOMContentLoaded', () => {
-    // Об'єднуємо обробники скролу за допомогою debounce
-    const handleScroll = debounce(() => {
-        highlightMenu();
-    }, 10); 
+    // Налаштовуємо картки для анімації
+    document.querySelectorAll('.card').forEach(card => {
+        card.classList.add('fade-in');
+        revealOnScroll.observe(card);
+    });
 
-    window.addEventListener('scroll', handleScroll);
-    
-    // Перший запуск при завантаженні
-    highlightMenu(); 
+    window.addEventListener('scroll', debounce(highlightMenu));
+    highlightMenu(); // Запуск при завантаженні
 });
