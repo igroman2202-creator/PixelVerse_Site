@@ -1,476 +1,153 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Комп'ютерна графіка, дизайн і мультимедіа</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelVerse: Світ Цифрового Мистецтва</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
 
-    <header>
-        <div class="container header-content">
-            <h1><i class="fas fa-palette"></i> Комп'ютерна графіка, дизайн і мультимедіа</h1>
-            <p class="tagline">Сучасні технології візуалізації, творчості та цифрових комунікацій</p>
-            <a href="#content" class="btn">Дізнатися більше</a>
-        </div>
-    </header>
-    
-    <div class="container" id="content">
-        <section class="section">
-            <h2>Що таке комп'ютерна графіка?</h2>
-            <p>Комп'ютерна графіка — це галузь інформатики, яка вивчає методи створення, обробки та відображення графічних зображень за допомогою комп'ютерної техніки. Вона охоплює широкий спектр технологій — від простих двовимірних малюнків до складних тривимірних моделей і анімації.</p>
-            
-            <div class="stats">
-                <div class="stat-item">
-                    <span class="stat-number">2D</span>
-                    <span class="stat-label">Векторна та растрова графіка</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">3D</span>
-                    <span class="stat-label">Моделювання та візуалізація</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">CAD/CAM</span>
-                    <span class="stat-label">Системи автоматизованого проектування</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">CGI</span>
-                    <span class="stat-label">Комп'ютерна генерація зображень</span>
-                </div>
-            </div>
-            
-            <div class="card-container">
-                <div class="card">
-                    <i class="fas fa-drafting-compass"></i>
-                    <h3>2D графіка</h3>
-                    <p>Двовимірна графіка використовується для створення плоских зображень, ілюстрацій, інтерфейсів програм та веб-сайтів. Основні формати: JPEG, PNG, GIF, SVG.</p>
-                    <p><span class="highlight">Програми:</span> Adobe Photoshop, Illustrator, CorelDRAW, GIMP, Inkscape</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-cube"></i>
-                    <h3>3D графіка</h3>
-                    <p>Тривимірна графіка дозволяє створювати об'ємні моделі, які можна обертати, анімувати та візуалізувати з різних ракурсів. Використовується в кіно, іграх, архітектурі.</p>
-                    <p><span class="highlight">Програми:</span> Blender, Maya, 3ds Max, Cinema 4D, ZBrush</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-vector-square"></i>
-                    <h3>Векторна графіка</h3>
-                    <p>Векторна графіка базується на математичних формулах, що дозволяє масштабувати зображення без втрати якості. Використовується в логотипах, ілюстраціях, шрифтах.</p>
-                    <p><span class="highlight">Переваги:</span> Масштабованість, малий розмір файлів, чіткість контурів</p>
-                </div>
-            </div>
-            
-            <h3>Додаткові технології рендерингу</h3>
-            <div class="tools-grid">
-                <div class="tool-item">
-                    <h4>Рендеринг PBR (Physically Based Rendering)</h4>
-                    <p>Метод, що імітує реальні фізичні властивості світла та матеріалів, забезпечуючи фотореалістичність 3D-сцен у кіно та іграх.</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Трасування променів (Ray Tracing)</h4>
-                    <p>Алгоритм для створення зображень, що імітує проходження світла, забезпечуючи високоякісні тіні, відбиття та заломлення.</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Моделювання частинок (Particle Systems)</h4>
-                    <p>Використовується для створення складних візуальних ефектів: вогню, диму, дощу, вибухів та рідин.</p>
-                </div>
+    <nav class="main-menu">
+        <div class="logo">PixelVerse</div>
+        <a href="#home">🏠 Головна</a>
+        <a href="#2d">🖼️ 2D Графіка</a>
+        <a href="#3d">🌐 3D Моделювання</a>
+        <a href="#ui-ux">🧠 UI/UX Дизайн</a>
+        <a href="#video-anim">🎬 Відео & Анімація</a>
+        <a href="#color-theory">🌈 Теорія Кольору</a>
+        <a href="#tools">⚙️ Інструменти</a>
+        <a href="#encyclopedia">📜 Енциклопедія</a>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <h1>Ласкаво просимо у світ, де пікселі стають мистецтвом!</h1>
+        <p>Комп'ютерна графіка, дизайн і мультимедіа — це сфера, що динамічно розвивається, поєднуючи мистецтво та технології.</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <h3>Що таке Комп'ютерна Графіка?</h3>
+                <p>Сукупність методів і засобів для створення та обробки зображень за допомогою комп'ютера. Поділяється на 2D, 3D та фрактальну графіку.</p>
             </div>
-            
-            <h3>Галузі застосування комп'ютерної графіки</h3>
-            <div class="tools-grid">
-                <div class="tool-item">
-                    <h4>Кінематографія</h4>
-                    <p>Створення спецефектів, CGI-персонажів, цифрових декорацій</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Відеоігри</h4>
-                    <p>Рендеринг 3D-сцен, створення текстур, анімація персонажів</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Медицина</h4>
-                    <p>Візуалізація томографічних знімків, 3D-моделі органів</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Архітектура</h4>
-                    <p>Створення 3D-моделей будівель, інтер'єрів, ландшафтів</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Наука</h4>
-                    <p>Візуалізація наукових даних, молекулярних структур</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Реклама</h4>
-                    <p>Створення візуального контенту для маркетингу</p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Дизайн у цифрову епоху</h2>
-            <p>Сучасний дизайн тісно пов'язаний з комп'ютерними технологіями. Він охоплює веб-дизайн, графічний дизайн, UX/UI дизайн, дизайн інтерфейсів та багато іншого.</p>
-            
-            <h3>Теорія кольору у дизайні</h3>
-            <p>Розуміння кольору є критично важливим для будь-якого дизайнера, оскільки колір впливає на емоції, сприйняття бренду та зручність читання.</p>
-            <div class="tools-grid">
-                <div class="tool-item">
-                    <h4>Кольорові моделі</h4>
-                    <p><strong>RGB</strong> (Red, Green, Blue) — для екранів та моніторів. <strong>CMYK</strong> (Cyan, Magenta, Yellow, Key/Black) — для друку.</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Психологія кольору</h4>
-                    <p>Вивчення того, як різні кольори викликають певні асоціації та емоції (наприклад, червоний — пристрасть, синій — довіра).</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Кольорова гармонія</h4>
-                    <p>Правила поєднання кольорів для створення естетично приємних палітр (комплементарні, аналогові, тріадичні схеми).</p>
-                </div>
-            </div>
-            
-            <h3>Ключові принципи UX/UI</h3>
-            <div class="tools-grid">
-                <div class="tool-item">
-                    <h4>Доступність (Accessibility)</h4>
-                    <p>Принципи, що забезпечують можливість використання продукту людьми з обмеженими можливостями (WCAG, контраст, навігація клавіатурою).</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Інформаційна архітектура</h4>
-                    <p>Організація та структурування контенту для полегшення навігації та пошуку інформації користувачами.</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Мікровзаємодії</h4>
-                    <p>Невеликі анімації та візуальні відгуки, що покращують відчуття від використання інтерфейсу (наприклад, анімація кнопки).</p>
-                </div>
+            <div class="card">
+                <h3>Історія та Перспективи</h3>
+                <p>Сучасний дизайн фокусується на функціональності та досвіді користувача (UX), а майбутнє пов'язане зі штучним інтелектом.</p>
             </div>
+        </div>
+    </section>
 
-            <div class="nav-tabs">
-                <div class="tab active" data-tab="web-design">Веб-дизайн</div>
-                <div class="tab" data-tab="graphic-design">Графічний дизайн</div>
-                <div class="tab" data-tab="ux-ui">UX/UI дизайн</div>
-                <div class="tab" data-tab="motion-design">Моушн-дизайн</div>
-            </div>
-            
-            <div class="tab-content active" id="web-design">
-                <h3>Веб-дизайн</h3>
-                <p>Мистецтво створення зручних, естетичних та функціональних веб-сайтів. Включає роботу з кольором, типографікою, композицією та інтерактивними елементами.</p>
-                
-                <div class="card-container">
-                    <div class="card">
-                        <h4>Front-end розробка</h4>
-                        <p>HTML, CSS, JavaScript - основні технології для створення інтерфейсів веб-сайтів</p>
-                    </div>
-                    <div class="card">
-                        <h4>Адаптивний дизайн</h4>
-                        <p>Підхід до веб-дизайну, що забезпечує оптимальний перегляд на різних пристроях</p>
-                    </div>
-                    <div class="card">
-                        <h4>Веб-типографіка</h4>
-                        <p>Мистецтво вибору та комбінування шрифтів для поліпшення читання та сприйняття</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-content" id="graphic-design">
-                <h3>Графічний дизайн</h3>
-                <p>Створення візуальних комунікацій за допомогою зображень, текстів та кольорів. Використовується в рекламі, брендингу, поліграфії.</p>
-                
-                <div class="card-container">
-                    <div class="card">
-                        <h4>Брендинг</h4>
-                        <p>Розробка візуальної ідентичності компанії: логотип, фірмовий стиль, кольорова палітра</p>
-                    </div>
-                    <div class="card">
-                        <h4>Поліграфія</h4>
-                        <p>Дизайн друкованої продукції: буклети, плакати, каталоги, упаковка</p>
-                    </div>
-                    <div class="card">
-                        <h4>Ілюстрація</h4>
-                        <p>Створення унікальних візуальних образів для різних медіа</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-content" id="ux-ui">
-                <h3>UX/UI дизайн</h3>
-                <p>UX (User Experience) зосереджений на досвіді користувача, тоді як UI (User Interface) — на візуальному представленні інтерфейсу. Разом вони створюють зручні продукти.</p>
-                
-                <div class="card-container">
-                    <div class="card">
-                        <h4>Дослідження користувачів</h4>
-                        <p>Аналіз потреб, поведінки та мотивації цільової аудиторії</p>
-                    </div>
-                    <div class="card">
-                        <h4>Прототипування</h4>
-                        <p>Створення макетів інтерфейсу для тестування ідей та функціоналу</p>
-                    </div>
-                    <div class="card">
-                        <h4>Тестування юзабіліті</h4>
-                        <p>Перевірка зручності використання інтерфейсу реальними користувачами</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-content" id="motion-design">
-                <h3>Моушн-дизайн</h3>
-                <p>Мистецтво створення анімованої графіки, що поєднує графічний дизайн та анімацію.</p>
-                
-                <div class="card-container">
-                    <div class="card">
-                        <h4>Кінетична типографіка</h4>
-                        <p>Анімація тексту для створення динамічних відео-роликів</p>
-                    </div>
-                    <div class="card">
-                        <h4>Інфографіка</h4>
-                        <p>Візуалізація даних та статистики у динамічній формі</p>
-                    </div>
-                    <div class="card">
-                        <h4>UI-анімація</h4>
-                        <p>Анімація елементів інтерфейсу для покращення взаємодії</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Мультимедіа технології</h2>
-            <p>Мультимедіа поєднує різні форми контенту — текст, аудіо, зображення, анімацію, відео — в єдиному цифровому представленні. Ці технології використовуються в освіті, розвагах, рекламі та багатьох інших сферах.</p>
-            <p><strong>Стиснення медіа (Compression)</strong> є ключовим елементом мультимедіа, оскільки воно дозволяє зменшити розмір файлів (зображень, аудіо, відео) для ефективного зберігання та передачі. Розрізняють <strong>стиснення з втратами (lossy)</strong>, яке зменшує розмір ціною якості (JPEG, MP3, MP4), та <strong>стиснення без втрат (lossless)</strong>, яке зберігає оригінальну якість (PNG, FLAC).</p>
-            
-            <h3>Потокове передавання та якість</h3>
-            <div class="tools-grid">
-                <div class="tool-item">
-                    <h4>Адаптивний бітрейт</h4>
-                    <p>Технологія динамічної зміни якості відео/аудіо залежно від швидкості інтернет-з'єднання користувача (HLS, DASH).</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Затримка (Latency)</h4>
-                    <p>Час, потрібний для передачі даних від джерела до користувача. Ключовий показник для живих трансляцій та інтерактивних медіа.</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Кодеки</h4>
-                    <p>Програми/алгоритми для стиснення та розпакування медіаданих (H.264, VP9, HEVC/H.265).</p>
-                </div>
+    <section id="2d" class="content-section blue-bg">
+        <h2>🖼️ 2D Графіка: Основи Візуалу</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Растрова Графіка</h3>
+                <p>Зображення складаються з сітки пікселів. При збільшенні якість падає. Формати: JPEG, PNG, GIF.</p>
             </div>
+            <div class="card">
+                <h3>Векторна Графіка</h3>
+                <p>Описується математичними формулами, що дозволяє масштабувати без втрати якості. Формати: SVG, AI, EPS.</p>
+            </div>
+        </div>
+    </section>
 
-            <div class="card-container">
-                <div class="card">
-                    <i class="fas fa-video"></i>
-                    <h3>Цифрове відео</h3>
-                    <p>Технології запису, обробки та відтворення відео на цифрових пристроях. Включає редагування, стиснення, спецефекти та потокове передавання.</p>
-                    <p><span class="highlight">Формати:</span> MP4, AVI, MOV, WMV, WebM</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-gamepad"></i>
-                    <h3>Інтерактивні медіа</h3>
-                    <p>Системи, що дозволяють користувачам взаємодіяти з контентом. Використовуються в іграх, навчальних програмах, віртуальних екскурсіях.</p>
-                    <p><span class="highlight">Приклади:</span> Відеоігри, симулятори, інтерактивні презентації</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-music"></i>
-                    <h3>Аудіо технології</h3>
-                    <p>Цифрова обробка звуку, включаючи запис, редагування, синтез та відтворення. Використовується в музиці, подкастах, звукових ефектах.</p>
-                    <p><span class="highlight">Формати:</span> MP3, WAV, FLAC, AAC, OGG</p>
-                </div>
-            </div>
-            
-            <h3>Історія розвитку мультимедіа</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>1970-ті</h4>
-                        <p>Поява перших комп'ютерних ігор та інтерактивних систем</p>
-                </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>1980-ті</h4>
-                        <p>Розвиток CD-технологій, поява перших мультимедійних комп'ютерів</p>
-                </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>1990-ті</h4>
-                        <p>Інтернет-революція, поява веб-браузерів, форматів стиснення медіа</p>
-                </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>2000-ні</h4>
-                        <p>Розвиток потокового відео, соціальних медіа, мобільних технологій</p>
-                </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>2010-ні</h4>
-                        <p>VR/AR технології, 4K/8K відео, хмарні медіа-сервіси</p>
-                </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>2020-ні</h4>
-                        <p>Метаверс, нейромережі для генерації контенту, реальний час рендерингу</p>
-            </div>
-                </div>
-            </div>
-        </section>
+    <section id="3d" class="content-section purple-bg">
+        <h2>🌐 3D Моделювання</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Текстурування та PBR</h3>
+                <p>Сучасне текстурування базується на моделі PBR (Physically Based Rendering), яка імітує фізичні властивості реальних матеріалів.</p>
+            </div>
+            <div class="card">
+                <h3>Процедурна Генерація</h3>
+                <p>Створення контенту за допомогою алгоритмів, що дозволяє будувати величезні світи (як у Minecraft).</p>
+            </div>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Віртуальна та доповнена реальність (VR/AR)</h2>
-            <p>VR та AR є одними з найбільш інноваційних напрямків розвитку комп'ютерної графіки та мультимедіа. Вони змінюють спосіб взаємодії людини з цифровим контентом.</p>
+    <section id="ui-ux" class="content-section blue-bg">
+        <h2>🧠 UI/UX Дизайн</h2>
+        [Image of UI UX design process flow]
+        <div class="card-grid">
+            <div class="card">
+                <h3>UX Дослідження</h3>
+                <p>Фокусується на потребах користувача через створення персон та картування шляху користувача.</p>
+            </div>
+            <div class="card">
+                <h3>Дизайн-системи</h3>
+                <p>Набір стандартів і компонентів для забезпечення послідовності розробки.</p>
+            </div>
+        </div>
+    </section>
 
-            <div class="card-container">
-                <div class="card">
-                    <i class="fas fa-vr-cardboard"></i>
-                    <h3>Віртуальна реальність (VR)</h3>
-                    <p>Технологія повного занурення, що створює штучне, тривимірне середовище. Потребує спеціальних шоломів або окулярів.</p>
-                    <p><span class="highlight">Застосування:</span> Ігри, симулятори, тренування (медицина, військові), віртуальні тури.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-eye"></i>
-                    <h3>Доповнена реальність (AR)</h3>
-                    <p>Накладання цифрових об'єктів на реальний світ за допомогою камер смартфонів або AR-окулярів. Додає інформаційний або візуальний шар до реальності.</p>
-                    <p><span class="highlight">Застосування:</span> Мобільні ігри (наприклад, Pokémon Go), навігація, інтерактивна реклама, освіта.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-hand-sparkles"></i>
-                    <h3>Технології AR/VR</h3>
-                    <p>Основними технологіями є високопродуктивний рендеринг у реальному часі, трекінг руху (Motion Tracking) та просторовий аудіо (Spatial Audio).</p>
-                    <p><span class="highlight">Ключові інструменти:</span> Unity, Unreal Engine, ARKit, ARCore.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Відео матеріали</h2>
-            <p>Ознайомтесь з відео матеріалами на тему комп'ютерної графіки, дизайну та мультимедіа:</p>
-            
-            <div class="video-container">
-                <div class="video-card">
-                    <div class="video-placeholder">
-                        <i class="fas fa-play-circle"></i>
-                        Основи комп'ютерної графіки
-                    </div>
-                    <div class="video-info">
-                        <h3>Основи комп'ютерної графіки</h3>
-                        <p>Короткий огляд основних понять та принципів комп'ютерної графіки. Розглядаються растрові та векторні зображення, кольорові моделі, формати файлів.</p>
-                        <p><strong>Тривалість:</strong> 15 хв</p>
-                        <a href="https://www.youtube.com/watch?v=0Tk7eXvXJrg" target="_blank" class="btn">Дивитися відео</a>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <div class="video-placeholder">
-                        <i class="fas fa-play-circle"></i>
-                        UI/UX дизайн для початківців
-                    </div>
-                    <div class="video-info">
-                        <h3>UI/UX дизайн для початківців</h3>
-                        <p>Основи створення зручних та естетичних інтерфейсів. Розглядаються принципи юзабіліті, композиції, кольорових рішень та типографіки.</p>
-                        <p><strong>Тривалість:</strong> 22 хв</p>
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=TgqeRTwZvIo" target="_blank" class="btn">Дивитися відео</a>
-                </div>
-                <div class="video-card">
-                    <div class="video-placeholder">
-                        <i class="fas fa-play-circle"></i>
-                        Створення 3D моделей
-                    </div>
-                    <div class="video-info">
-                        <h3>Створення 3D моделей</h3>
-                        <p>Процес моделювання тривимірних об'єктів у спеціалізованих програмах. Демонструються техніки полігонального моделювання, текстурування та освітлення.</p>
-                        <p><strong>Тривалість:</strong> 18 хв</p>
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=RaT-uG5wgUw" target="_blank" class="btn">Дивитися відео</a>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Інструменти та програмне забезпечення</h2>
-            <p>Сучасні професіонали у галузі комп'ютерної графіки, дизайну та мультимедіа використовують широкий спектр програмних рішень:</p>
-            
-            <div class="tools-grid">
-                <div class="tool-item">
-                    <h4>Adobe Creative Cloud</h4>
-                    <p>Photoshop, Illustrator, InDesign, After Effects, Premiere Pro</p>
-                </div>
-                <div class="tool-item">
-                    <h4>3D Modeling & Animation</h4>
-                    <p>Blender, Autodesk Maya, 3ds Max, Cinema 4D, ZBrush</p>
-                </div>
-                <div class="tool-item">
-                    <h4>UI/UX Design</h4>
-                    <p>Figma, Adobe XD, Sketch, InVision, Axure</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Video Editing</h4>
-                    <p>Adobe Premiere, Final Cut Pro, DaVinci Resolve, Avid Media Composer</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Audio Production</h4>
-                    <p>Pro Tools, Ableton Live, FL Studio, Logic Pro, Audacity</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Game Development</h4>
-                    <p>Unity, Unreal Engine, Godot, GameMaker Studio</p>
-                </div>
-            </div>
-            
-            <div class="quote">
-                <p>"Кращий інструмент - це той, який ви знаєте найкраще. Але не бійтеся експериментувати з новими технологіями, адже саме вони відкривають нові горизонти творчості."</p>
-                <p>- Джон Лассетер, засновник Pixar</p>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Джерела інформації</h2>
-            <p>Інформація для цього сайту була взята з наступних джерел:</p>
-            
-            <ul class="sources-list">
-                <li><a href="https://uk.wikipedia.org/wiki/Комп'ютерна_графіка" target="_blank">Вікіпедія: Комп'ютерна графіка</a></li>
-                <li><a href="https://www.adobe.com/creativecloud.html" target="_blank">Adobe Creative Cloud</a></li>
-                <li><a href="https://www.interaction-design.org/literature/topics/ux-design" target="_blank">Interaction Design Foundation: UX Design</a></li>
-                <li><a href="https://www.blender.org/" target="_blank">Blender - 3D Creation</a></li>
-                <li><a href="https://www.w3schools.com/graphics/" target="_blank">W3Schools: Graphics Tutorial</a></li>
-                <li><a href="https://www.coursera.org/specializations/graphic-design" target="_blank">Coursera: Graphic Design Specialization</a></li>
-                <li><a href="https://www.smashingmagazine.com/category/graphics/" target="_blank">Smashing Magazine: Graphics</a></li>
-                <li><a href="https://www.behance.net/" target="_blank">Behance - Design Portfolio Platform</a></li>
-                <li><a href="https://dribbble.com/" target="_blank">Dribbble - Design Community</a></li>
-            </ul>
-        </section>
-    </div>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Про проект</h3>
-                    <p>Цей сайт створено для ознайомлення з основами комп'ютерної графіки, дизайну та мультимедіа технологій. Всі матеріали надано для навчальних цілей.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Контакти</h3>
-                    <p>Email: info@graphic-design.ua</p>
-                    <p>Телефон: +380 (XX) XXX-XX-XX</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Корисні посилання</h3>
-                    <p><a href="#">Блог</a></p>
-                    <p><a href="#">Курси</a></p>
-                    <p><a href="#">Ресурси</a></p>
-                    <p><a href="#">Форум</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2023 Сайт про комп'ютерну графіку, дизайн і мультимедіа. Всі права захищені.</p>
-                <p>Інформаційний ресурс для вивчення сучасних технологій візуалізації та творчості</p>
-                <p><strong>Студент: Вадим Блащук</strong></p>
-            </div>
-        </div>
-    </footer>
+    <section id="video-anim" class="content-section purple-bg">
+        <h2>🎬 Відео & Анімація</h2>
+        <div class="video-container">
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="VFX Showreel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Принципи Діснея</h3>
+                <p>12 основних принципів, як-от Squash and Stretch, роблять анімацію живою.</p>
+            </div>
+            <div class="card">
+                <h3>VFX та Композитинг</h3>
+                <p>Процес поєднання реальних зйомок з цифровими ефектами та 3D-моделями.</p>
+            </div>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section id="color-theory" class="content-section blue-bg">
+        <h2>🌈 Теорія Кольору</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Моделі HSL та HSV</h3>
+                <p>Hue (відтінок), Saturation (насиченість) та Value/Lightness (яскравість) — інтуїтивні моделі для дизайнерів.</p>
+            </div>
+            <div class="card">
+                <h3>Колірний Простір</h3>
+                <p>sRGB для вебу та Adobe RGB або DCI-P3 для професійного друку та кіно.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="content-section purple-bg">
+        <h2>⚙️ Інструменти & Ресурси</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3><i class="fa-solid fa-paintbrush"></i> 2D & UI/UX</h3>
+                <p>Adobe Photoshop, Illustrator та <strong>Figma</strong> — стандарт для дизайну інтерфейсів.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-cube"></i> 3D та Ігри</h3>
+                <p>Blender, Autodesk Maya та <strong>Unreal Engine 5</strong> для рендерингу в реальному часі.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-video"></i> Відеомонтаж</h3>
+                <p>DaVinci Resolve (корекція кольору), Premiere Pro та After Effects (моушн-дизайн).</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="encyclopedia" class="content-section blue-bg">
+        <h2>📜 Енциклопедія</h2>
+        <div class="card-grid">
+            <div class="card full-width-card">
+                <h3>Графічний Процесор (GPU)</h3>
+                <p>Має тисячі ядер для паралельних обчислень, що необхідно для растеризації та трасування променів.</p>
+            </div>
+            <div class="card full-width-card">
+                <h3>Фрактальна Графіка</h3>
+                <p>Побудована на самоподібних математичних формулах, що імітують природні структури.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 PixelVerse. Студент: Блащук Вадим | Група: 2КН-25Б</p>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
