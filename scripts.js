@@ -1,13 +1,11 @@
-// Оптимізація викликів
-function debounce(func, delay = 15) {
+const debounce = (func, delay = 10) => {
     let timeout;
-    return function() {
+    return (...args) => {
         clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, arguments), delay);
+        timeout = setTimeout(() => func.apply(this, args), delay);
     };
-}
+};
 
-// Активне меню
 function highlightMenu() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.main-menu a');
@@ -15,7 +13,7 @@ function highlightMenu() {
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 200) {
+        if (window.scrollY >= sectionTop - 150) {
             current = section.getAttribute('id');
         }
     });
@@ -28,22 +26,7 @@ function highlightMenu() {
     });
 }
 
-// Анімація появи карток (Intersection Observer)
-const revealOnScroll = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.1 });
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Налаштовуємо картки для анімації
-    document.querySelectorAll('.card').forEach(card => {
-        card.classList.add('fade-in');
-        revealOnScroll.observe(card);
-    });
-
     window.addEventListener('scroll', debounce(highlightMenu));
-    highlightMenu(); // Запуск при завантаженні
+    highlightMenu();
 });
